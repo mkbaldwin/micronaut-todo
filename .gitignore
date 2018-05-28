@@ -17,6 +17,7 @@ gradle-app.setting
 .idea/libraries
 .idea/modules
 .idea/workspace.xml
+.idea/uiDesigner.xml
 *.iws
 *.iml
 *.ipr
