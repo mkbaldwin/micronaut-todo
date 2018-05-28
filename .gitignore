@@ -21,3 +21,6 @@ gradle-app.setting
 *.iws
 *.iml
 *.ipr
+
+#Micronaut Stuff
+out
