@@ -1,45 +1,41 @@
 package todo.service
 
+import grails.gorm.transactions.Transactional
 import todo.model.Todo
 
 import javax.inject.Inject
 import javax.inject.Singleton
-import javax.persistence.EntityManager
-import javax.transaction.Transactional
 
 @Singleton
 class TodoServiceImpl implements  TodoService {
   List<Todo> dummyData = [
       new Todo(title: "Download Micronaut", complete: true),
       new Todo(title: "Learn Micronaut", complete: false),
-      new Todo(title: "Build Application", complete: false)
+      new Todo(title: "Build Application", complete: false),
+      new Todo(title: "Profit", complete: false)
   ]
 
-  EntityManager entityManager
-
   @Inject
-  TodoServiceImpl(EntityManager entityManager) {
-    this.entityManager = entityManager
+  TodoServiceImpl() {
   }
 
   @Transactional
   @Override
   def populateTestData() {
     dummyData.each {
-      entityManager.persist(it)
+      it.save()
     }
   }
 
   @Transactional
   @Override
   List<Todo> getAllTodos() {
-    entityManager.findAll()
+    Todo.findAll()
   }
 
   @Transactional
   @Override
   Todo getTodo(int id) {
-    //dummyData.find { it.id == id}
-    entityManager.find(Todo.class, id)
+    Todo.findById(id)
   }
 }

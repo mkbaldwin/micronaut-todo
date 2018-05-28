@@ -2,12 +2,12 @@ package todo.model
 
 import javax.persistence.*
 
-@Entity
+@grails.gorm.annotation.Entity
 @Table(name = "TODO")
 class Todo {
   @Id
   @GeneratedValue
-  @Column(name = "id", updatable = false, nullable = false)
+  @Column(name = "ID", updatable = false, nullable = false)
   int id
 
   @Column(name = "TITLE")

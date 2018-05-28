@@ -16,12 +16,10 @@ dataSource:
     driverClassName: org.h2.Driver
     username: sa
     password:
-jpa:
-    default:
-        packages-to-scan:
-            - 'todo.model'
-        properties:
-            hibernate:
-                hbm2ddl:
-                    auto: update
-                show_sql: true
+hibernate:
+    cache:
+        queries: false
+        use_second_level_cache: true
+        use_query_cache: false
+        region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+
