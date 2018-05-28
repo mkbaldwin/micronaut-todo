@@ -1,5 +1,8 @@
 # micronaut-todo
 
-A very simple "to do" application built with [Micronaut](http://micronaut.io/) framework. The project currently uses
-a snapshot release that must be built and published to a local repository. Follow the instructions for Micronaut 
-documentation to do this.
+This is a simple project just to experiment with the new [Micronaut](http://micronaut.io/) framework.
+It uses a snapshot release of the framework that must be built from source (at the time this was 
+written there aren't builds published to any repos yet). Follow the instructions for Micronaut 
+documentation to do this. 
+
+This code is purely experimental, and is not intended to actually be used other than for learning.
