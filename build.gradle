@@ -24,11 +24,12 @@ apply plugin: "net.ltgt.apt-idea"
 repositories {
   mavenLocal()
   mavenCentral()
+  jcenter()
 }
 
 dependencyManagement {
   imports {
-    mavenBom 'io.micronaut:bom:1.0.0-SNAPSHOT'
+    mavenBom 'io.micronaut:bom:1.0.0.M1'
   }
 }
 
