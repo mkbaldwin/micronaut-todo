@@ -41,4 +41,12 @@ class TodoServiceImpl implements  TodoService {
   Todo getTodo(int id) {
     Todo.findById(id)
   }
+
+  @Transactional
+  @Override
+  void addTodo(String title, boolean complete) {
+    def todo = new Todo(title: title, complete: complete)
+    todo.save()
+    todo
+  }
 }

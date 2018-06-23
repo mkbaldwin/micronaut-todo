@@ -1,6 +1,9 @@
 package todo.model
 
-import javax.persistence.*
+import javax.persistence.Column
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
+import javax.persistence.Table
 
 @grails.gorm.annotation.Entity
 @Table(name = "TODO")

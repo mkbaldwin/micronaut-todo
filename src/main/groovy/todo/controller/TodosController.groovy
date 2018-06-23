@@ -1,9 +1,10 @@
 package todo.controller
 
-import io.micronaut.http.MediaType
+import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
-import io.micronaut.http.annotation.Produces
+import io.micronaut.http.annotation.Post
+import todo.dto.AddUpdateTodoDTO
 import todo.model.Todo
 import todo.service.TodoService
 
@@ -18,22 +19,13 @@ class TodosController {
     this.todoService = todoService
   }
 
-  @Get("/list")
+  @Get("/")
   List<Todo> listTodos() {
     todoService.getAllTodos()
   }
 
-  @Get("/todo/{id}")
-  Todo getTodo(int id) {
-    todoService.getTodo(id)
-  }
-
-
-
-  @Get("/test")
-  @Produces(MediaType.TEXT_PLAIN)
-  String populateTestData() {
-    todoService.populateTestData()
-    "OK"
+  @Post("/")
+  Todo addTodo(@Body AddUpdateTodoDTO newTodo) {
+    todoService.addTodo(newTodo.title, newTodo.complete)
   }
 }
